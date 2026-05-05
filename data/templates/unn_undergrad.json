@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "institution": "University of Nigeria, Nsukka (UNN)",
+    "program_level": "Undergraduate",
+    "faculty": "Any",
+    "last_updated": "2026-05-05"
+  },
+  "structure": [
+    {
+      "id": "prelims",
+      "title": "Preliminary Pages",
+      "description": "Introductory pages before the main body. Numbered in lower case Roman Numerals at the bottom center.",
+      "subsections": [
+        { "id": "p1", "title": "Title Page", "guidance_notes": "Follow the university's prescribed format for the title page." },
+        { "id": "p2", "title": "Approval/Certification Page", "guidance_notes": "Standard certification of originality and supervisor's approval." },
+        { "id": "p3", "title": "Dedication", "guidance_notes": "A brief dedication." },
+        { "id": "p4", "title": "Acknowledgements", "guidance_notes": "Recognize individuals and organizations that assisted." },
+        { "id": "p5", "title": "Table of Contents", "guidance_notes": "Detailed list of chapters and sections." },
+        { "id": "p6", "title": "List of Tables", "guidance_notes": "If applicable." },
+        { "id": "p7", "title": "List of Figures", "guidance_notes": "If applicable." },
+        { "id": "p8", "title": "List of Appendices", "guidance_notes": "If applicable." },
+        { "id": "p9", "title": "Abstract", "guidance_notes": "Single spaced summary, not more than 500 words." }
+      ]
+    },
+    {
+      "id": "ch1",
+      "title": "Chapter 1: Introduction",
+      "description": "Sets the background for the research.",
+      "subsections": [
+        { "id": "1.1", "title": "Background to the Study", "guidance_notes": "Overview of research area and motivation." },
+        { "id": "1.2", "title": "Statement of the Problem", "guidance_notes": "Clear description of the issue being addressed." },
+        { "id": "1.3", "title": "Purpose of the Study", "guidance_notes": "General and specific objectives." },
+        { "id": "1.4", "title": "Significance of the Study", "guidance_notes": "Who benefits and how." },
+        { "id": "1.5", "title": "Scope of the Study", "guidance_notes": "Boundaries (geographical, content, time)." },
+        { "id": "1.6", "title": "Research Questions", "guidance_notes": "Specific questions the study seeks to answer." },
+        { "id": "1.7", "title": "Research Hypotheses", "guidance_notes": "Optional/Field dependent. Null hypotheses to be tested." }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Chapter 2: Review of Literature",
+      "description": "Analysis of existing literature.",
+      "subsections": [
+        { "id": "2.1", "title": "Conceptual Framework", "guidance_notes": "Definitions and relationships between core concepts." },
+        { "id": "2.2", "title": "Theoretical Framework", "guidance_notes": "Theories upon which the study is anchored." },
+        { "id": "2.3", "title": "Empirical Studies", "guidance_notes": "Review of previous related research works." },
+        { "id": "2.4", "title": "Summary of Literature Review", "guidance_notes": "Highlighting the gap the current study intends to fill." }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Chapter 3: Research Methodology",
+      "description": "Details the research process.",
+      "subsections": [
+        { "id": "3.1", "title": "Design of the Study", "guidance_notes": "e.g., Descriptive Survey, Experimental, Quasi-experimental." },
+        { "id": "3.2", "title": "Area of the Study", "guidance_notes": "Geographical location where the research is conducted." },
+        { "id": "3.3", "title": "Population of the Study", "guidance_notes": "Total group of individuals/items of interest." },
+        { "id": "3.4", "title": "Sample and Sampling Techniques", "guidance_notes": "The subset selected and the method used (e.g., Random, Stratified)." },
+        { "id": "3.5", "title": "Instrument for Data Collection", "guidance_notes": "Tools used (e.g., Questionnaire, Interview Schedule)." },
+        { "id": "3.6", "title": "Validation of the Instrument", "guidance_notes": "Check for face and content validity." },
+        { "id": "3.7", "title": "Reliability of the Instrument", "guidance_notes": "Consistency testing (e.g., Cronbach's Alpha)." },
+        { "id": "3.8", "title": "Method of Data Collection", "guidance_notes": "Steps taken to distribute and retrieve instruments." },
+        { "id": "3.9", "title": "Method of Data Analysis", "guidance_notes": "Statistical tools used (e.g., Mean, SD, T-test, ANOVA)." }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Chapter 4: Results and Discussion",
+      "description": "Presentation and interpretation of results.",
+      "subsections": [
+        { "id": "4.1", "title": "Presentation of Results", "guidance_notes": "Orderly presentation according to research questions/hypotheses." },
+        { "id": "4.2", "title": "Discussion of Findings", "guidance_notes": "Interpretation in relation to literature reviewed." }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Chapter 5: Summary, Conclusion, and Recommendations",
+      "description": "Wrapping up the research.",
+      "subsections": [
+        { "id": "5.1", "title": "Summary of the Study", "guidance_notes": "Brief overview of the entire work." },
+        { "id": "5.2", "title": "Conclusion", "guidance_notes": "Final thoughts based on the findings." },
+        { "id": "5.3", "title": "Recommendations", "guidance_notes": "Practical steps suggested based on the results." },
+        { "id": "5.4", "title": "Limitations of the Study", "guidance_notes": "Challenges encountered that might affect findings." },
+        { "id": "5.5", "title": "Suggestions for Further Research", "guidance_notes": "Areas for future investigators to explore." }
+      ]
+    },
+    {
+      "id": "formatting",
+      "title": "General Formatting Rules",
+      "description": "UNN specific formatting rules.",
+      "subsections": [
+        { "id": "f1", "title": "Font and Spacing", "guidance_notes": "Font: Times New Roman, 12pt. Line Spacing: Double (2.0) for body, Single for Abstract/long quotes." },
+        { "id": "f2", "title": "Margins", "guidance_notes": "Left: 1.5 inches; Right, Top, Bottom: 1.0 inch." },
+        { "id": "f3", "title": "Referencing", "guidance_notes": "APA 7th Edition style." }
+      ]
+    }
+  ]
+}
