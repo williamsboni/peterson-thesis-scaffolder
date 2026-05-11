@@ -10,7 +10,7 @@ from llm_utils import LLMMapper
 st.set_page_config(page_title="Thesis Scaffolder", layout="wide")
 
 # Constants
-TEMPLATES_DIR = '/home/team/shared/data/templates'
+TEMPLATES_DIR = os.path.join(os.path.dirname(__file__), 'data')
 OUTPUT_DIR = tempfile.gettempdir()
 
 def get_available_universities():

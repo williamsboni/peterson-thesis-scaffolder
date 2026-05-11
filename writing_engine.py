@@ -234,7 +234,5 @@ class DefenseEngine:
 
 if __name__ == "__main__":
     # Quick test
-    engine = WritingEngine("/home/team/shared/data/templates/unizik_undergrad.json")
-    notes = "Researching impact of remote work on employee productivity. Focus on tech workers in Lagos."
-    chapter_1 = engine.draft_chapter("ch1", notes)
-    print(chapter_1[:500] + "...")
+    # engine = WritingEngine("data/unizik_undergrad.json")
+    pass
