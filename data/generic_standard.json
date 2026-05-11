@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "institution": "Generic Standard",
+    "program_level": "Undergraduate",
+    "faculty": "Any",
+    "last_updated": "2023-10-27"
+  },
+  "structure": [
+    {
+      "id": "ch1",
+      "title": "Chapter One: Introduction",
+      "description": "Sets the stage for the research.",
+      "subsections": [
+        {
+          "id": "1.1",
+          "title": "Background of the Study",
+          "guidance_notes": "Provide context and historical development of the problem."
+        },
+        {
+          "id": "1.2",
+          "title": "Statement of the Problem",
+          "guidance_notes": "State clearly what the research is trying to solve."
+        },
+        {
+          "id": "1.3",
+          "title": "Objectives of the Study",
+          "guidance_notes": "List the specific goals the research aims to achieve."
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Chapter Two: Literature Review",
+      "description": "Reviews existing work in the field.",
+      "subsections": [
+        {
+          "id": "2.1",
+          "title": "Conceptual Framework",
+          "guidance_notes": "Define key terms and concepts."
+        },
+        {
+          "id": "2.2",
+          "title": "Theoretical Framework",
+          "guidance_notes": "Identify theories that underpin the research."
+        },
+        {
+          "id": "2.3",
+          "title": "Empirical Review",
+          "guidance_notes": "Summarize previous studies relevant to the topic."
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Chapter Three: Research Methodology",
+      "description": "Explains how the research was conducted.",
+      "subsections": [
+        {
+          "id": "3.1",
+          "title": "Research Design",
+          "guidance_notes": "Describe the overall strategy chosen to integrate the different components of the study."
+        },
+        {
+          "id": "3.2",
+          "title": "Population and Sampling",
+          "guidance_notes": "Define the group of interest and how participants were selected."
+        }
+      ]
+    }
+  ]
+}

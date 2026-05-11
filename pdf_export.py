@@ -6,7 +6,28 @@ class PDFExportEngine(FPDF):
     def __init__(self, template):
         super().__init__()
         self.template = template
+        self.preliminary_mode = True
+        self.prelim_page_count = 0
         self.apply_formatting()
+
+    def set_preliminary_mode(self, mode):
+        if self.preliminary_mode and not mode:
+            # We just switched from prelim to body
+            self.prelim_page_count = self.page_no() - 1
+        self.preliminary_mode = mode
+
+    def arabic_to_roman(self, num):
+        roman_map = {
+            1000: 'm', 900: 'cm', 500: 'd', 400: 'cd',
+            100: 'c', 90: 'xc', 50: 'l', 40: 'xl',
+            10: 'x', 9: 'ix', 5: 'v', 4: 'iv', 1: 'i'
+        }
+        res = ""
+        for val, symbol in roman_map.items():
+            while num >= val:
+                res += symbol
+                num -= val
+        return res
 
     def apply_formatting(self):
         # Default values
@@ -50,7 +71,16 @@ class PDFExportEngine(FPDF):
     def footer(self):
         self.set_y(-15)
         self.set_font("Times", "I", 8)
-        self.cell(0, 10, f"Page {self.page_no()}", align="C")
+        if self.preliminary_mode:
+            # First page (Title Page) usually has hidden number
+            if self.page_no() == 1:
+                pass 
+            else:
+                roman_page = self.arabic_to_roman(self.page_no())
+                self.cell(0, 10, roman_page, align="C")
+        else:
+            arabic_page = self.page_no() - self.prelim_page_count
+            self.cell(0, 10, f"{arabic_page}", align="C")
 
     def add_section(self, title, content, level=1):
         if level == 1:
@@ -80,32 +110,44 @@ def export_outline_to_pdf(json_template_path, markdown_outline_path, output_pdf_
         md_content = f.read()
 
     pdf = PDFExportEngine(template)
+    # Start the first page (Title Page)
     pdf.add_page()
-    
+
     # Very basic MD to PDF parsing for the demo
     lines = md_content.split('\n')
     current_section_title = ""
     current_content = []
-    
-    pdf.set_font("Times", "B", 20)
-    pdf.cell(0, 20, template['metadata']['institution'], ln=True, align='C')
-    pdf.set_font("Times", "B", 16)
-    pdf.cell(0, 10, f"Program Level: {template['metadata']['program_level']}", ln=True, align='C')
-    pdf.ln(10)
 
     for line in lines:
-        if line.startswith('## '):
+        if line.startswith('# '):
+            title = line[2:].strip()
+            # Check if we are moving from preliminary to main body
+            if "CHAPTER" in title.upper() and pdf.preliminary_mode:
+                pdf.set_preliminary_mode(False)
+            
             if current_section_title:
                 pdf.add_section(current_section_title, "\n".join(current_content), level=1)
+            
+            # Start a new page for every top-level chapter/section
+            # EXCEPT the very first one (Title Page) which already has its page
+            if current_section_title or pdf.page_no() > 1:
+                pdf.add_page()
+                
+            pdf.add_section(title, "", level=1)
+            current_section_title = ""
+            current_content = []
+        elif line.startswith('## '):
+            if current_section_title:
+                pdf.add_section(current_section_title, "\n".join(current_content), level=2)
             current_section_title = line[3:].strip()
             current_content = []
         elif line.startswith('### '):
             if current_section_title:
-                pdf.add_section(current_section_title, "\n".join(current_content), level=1)
+                pdf.add_section(current_section_title, "\n".join(current_content), level=2)
                 current_section_title = ""
-            # We treat ### as level 2
-            pdf.add_section(line[4:].strip(), "", level=2)
-        elif line.strip() == "" or line.startswith('# '):
+            # We treat ### as level 3
+            pdf.add_section(line[4:].strip(), "", level=3)
+        elif line.strip() == "":
             continue
         else:
             current_content.append(line)
